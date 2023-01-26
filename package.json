@@ -1,11 +1,33 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
+    "express-handlebars": "^5.3.5",
+    "express-session": "^1.17.3",
     "handlebars": "^4.7.6",
     "mysql2": "^3.0.1",
     "path": "^0.12.7",
-    "sequelize": "^6.28.0"
-  }
+    "sequelize": "^6.28.0",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+  },
+  "name": "car-dealer-application",
+  "version": "1.0.0",
+  "description": "E-Commers-Application",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hovigmk/Project_2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hovigmk/Project_2/issues"
+  },
+  "homepage": "https://github.com/hovigmk/Project_2#readme"
 }
