@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Car:</h3>
+
+    <form class="form new-car-form">
+      <div class="form-group">
+        <label for="car-model">Car model:</label>
+        <input class="form-input" type="text" id="car-model" name="car-model" />
+      </div>
+      <div class="form-group">
+        <label for="car-price">Price ($):</label>
+        <input class="form-input" type="number" id="car-price" name="car-price" />
+      </div>
+      <div class="form-group">
+        <label for="car-desc">Description:</label>
+        <textarea class="form-input" id="car-desc" name="car-desc"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="car-picture-id">Picture Id:</label>
+        <input class="form-input" type="number" id="car-picture-id" name="car-picture-id" />
+      </div>
+      <div class="form-group">
+        <label for="car-make">Car make:</label>
+        <input class="form-input" type="text" id="car-make" name="car-make" />
+      </div>
+      <div class="form-group">
+        <label for="car-mileage">Car mileage:</label>
+        <input class="form-input" type="number" id="car-mileage" name="car-mileage" />
+      </div>
+      <div class="form-group">
+        <label for="car-make">Car year:</label>
+        <input class="form-input" type="number" id="car-year" name="car-year" />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if cars.length}}
+  <div class="col-md-6 car-list">
+    <h3>Current Cars for Sale:</h3>
+
+    {{#each cars as |car|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/car/{{car.id}}">{{car.model}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{car.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>

@@ -1,0 +1,35 @@
+[
+    {
+      
+      "pictureId": 1,
+      "make": "Fiat",
+        "model": "500",
+        "mileage": 10000,
+        "year": 1971,
+        "price": 20000,
+        "description": "Compact popular car sold in the 60s and 70s in europe, very good fuel economy and versatile."
+        
+    },
+    {
+        
+        "pictureId": 2,
+        "make": "Fiat",
+          "model": "500",
+          "mileage": 18000,
+          "year": 1969,
+          "price": 15000,
+          "description": "Compact popular car sold in the 60s and 70s in europe, very good fuel economy and versatile."
+          
+    },
+    {
+        
+        "pictureId": 3,
+        "make": "Fiat",
+          "model": "500",
+          "mileage": 10000,
+          "year": 1971,
+          "price": 20000,
+          "description": "Compact popular car sold in the 60s and 70s in europe, very good fuel economy and versatile."
+          
+    }
+  ]
