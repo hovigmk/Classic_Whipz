@@ -27,17 +27,17 @@ User.init(
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            //validate: {
-             //   isEmail: true,
-            //},
+            validate: {
+                isEmail: true,
+            },
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            //validate: {
-            //    len: [8, 20],
-            //    is: ["^[a-z]+$",'i'],
-            //},
+            validate: {
+                len: [8, 20],
+                is: ["^[a-z]+$",'i'],
+            },
         },
 
     },

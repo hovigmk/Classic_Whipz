@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const { v4: uuidv4 } = require('uuid');
 
-class Car extends Model { }
+class Car extends Model {}
 
 Car.init(
     {
@@ -11,7 +11,7 @@ Car.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-
+          
         },
         pictureId: {
             type: DataTypes.INTEGER,
@@ -54,7 +54,8 @@ Car.init(
             allowNull: false,
         },
         userId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
+            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',

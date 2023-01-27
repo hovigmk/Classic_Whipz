@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "nameOnCard": 1,
+      "cardNumber": "Fiat",
+        "expirationDate": "500",
+        "amount": "1000",
+        "CVV": 10000,
+        "userId": 1971,
+        "carId": 20000
+                
+    }
+    
+  ]
