@@ -638,6 +638,7 @@ h3 {
 }
 
 .section-signup h2 {
+    font-style: unset;
     color: red;
     width: 73%;
     text-align: right;
@@ -668,6 +669,13 @@ h3 {
     padding-bottom: 90px;
 }
 
+.submit-comment {
+    text-decoration: none;
+}
+
+.wide {
+    width: 100%;
+}
 
 
 /*footer*/

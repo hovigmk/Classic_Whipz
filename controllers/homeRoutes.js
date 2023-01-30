@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name', 'email'],//pulled in name and email from user
+          attributes: ['name'],//pulled in name and email from user
         },
       ],
     });
@@ -54,7 +54,7 @@ console.log("req.params.id CAR INFORMATION HERE ABOVE!!!!!!!!:: " + car.model);
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile54321', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.userid, {
