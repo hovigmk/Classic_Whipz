@@ -1,60 +1,29 @@
 <div class="body-for-homepage">
-        <section class="section-homepage">
+  <section class="section-homepage">
 
-          <div class="red-box">
-            <h1>Classic Whipz<br><span>Where you can buy the car that your dad used to drive!</span></h1>
-          </div>
-          <div class="intro-picture"></div>
+    <div class="red-box">
+      <h1>Classic Whipz<br><span>Where you can buy the car that your dad used to drive!</span></h1>
+    </div>
+    <div class="intro-picture"></div>
 
-        </section>
-        <section class="section-new-additions">
-          <h2>Newest additions for sale!!!</h2>
-          <div class="container-new-additions">
-            <div class="new-addition">
-              <a href="/car/1"><img src="/images/1/1.jpg" alt="model and year"></a>
-              <a href="/car/1">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/2"><img src="/images/2/1.jpg" alt="model and year"></a>
-              <a href="/car/2">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/3"><img src="/images/3/1.jpg" alt="model and year"></a>
-              <a href="/car/3">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/4"><img src="/images/4/1.jpg" alt="model and year"></a>
-              <a href="/car/4">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/5"><img src="/images/5/1.jpg" alt="model and year"></a>
-              <a href="/car/5">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/6"><img src="/images/6/1.jpg" alt="model and year"></a>
-              <a href="/car/6">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/7"><img src="/images/7/1.jpg" alt="model and year"></a>
-              <a href="/car/7">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/8"><img src="/images/8/1.jpg" alt="model and year"></a>
-              <a href="/car/8">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/9"><img src="/images/9/1.jpg" alt="model and year"></a>
-              <a href="/car/9">Make and Model</a>
-            </div>
-            <div class="new-addition">
-              <a href="/car/10"><img src="/images/10/1.jpg" alt="model and year"></a>
-              <a href="/car/10">Make and Model</a>
-            </div>
-          </div>
-          <a href="../carlist.html" class="see-all">See more</a>
+  </section>
+  <section class="section-new-additions">
+    <h2>Newest additions for sale!!!</h2>
+    <div class="container-new-additions">
 
-        </section>
+      {{#each cars as |car| }}
 
-
+      <div class="new-addition">
+        <a href="/car/{{car.id}}"><img src="/images/{{car.id}}/1.jpg" alt="model and year"></a>
+        <a href="/car/1">{{car.year}} {{car.make}} {{car.model}}</a>
       </div>
-      
+
+      {{/each}}
+
+    </div>
+    <a href="../carlist.html" class="see-all">See more</a>
+
+  </section>
+
+
+</div>
