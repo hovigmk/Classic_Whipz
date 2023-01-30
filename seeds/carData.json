@@ -4,32 +4,109 @@
       "pictureId": 1,
       "make": "Fiat",
         "model": "500",
-        "mileage": 10000,
+        "mileage": 29524,
         "year": 1971,
         "price": 20000,
-        "description": "Compact popular car sold in the 60s and 70s in europe, very good fuel economy and versatile."
+        "description": "The Fiat 500 is a rear-engined car with 4 seats and a small 2 cylinder 500cc engine that makes it very practical for city driving, very easy to maintain as the mechanical parts are of very simple design"
         
     },
     {
         
         "pictureId": 2,
-        "make": "Fiat",
-          "model": "500",
-          "mileage": 18000,
-          "year": 1969,
-          "price": 15000,
-          "description": "Compact popular car sold in the 60s and 70s in europe, very good fuel economy and versatile."
+        "make": "Mini",
+          "model": "Cooper",
+          "mileage": 7589,
+          "year": 1978,
+          "price": 35000,
+          "description": "The Mini is a small front-engined car with 4 seats and a small 2 cylinder 1000cc engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
           
     },
     {
         
         "pictureId": 3,
-        "make": "Fiat",
-          "model": "500",
-          "mileage": 10000,
-          "year": 1971,
-          "price": 20000,
-          "description": "Compact popular car sold in the 60s and 70s in europe, very good fuel economy and versatile."
+        "make": "Mini",
+          "model": "Mini",
+          "mileage": 26000,
+          "year": 1979,
+          "price": 17500,
+          "description": "The Mini is a small front-engined car with 4 seats and a small 2 cylinder 1000cc engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
           
-    }
+    },
+    {
+      
+      "pictureId": 4,
+      "make": "Ford",
+        "model": "Thunderbird",
+        "mileage": 101000,
+        "year": 1992,
+        "price": 10888,
+        "description": "This Ford Thunderbird was a luxury sports car sold from 1989 to 1997, front engined and rear wheel drive with muscle v6 supercharged engine can push this classic very fast from start line!"
+        
+    },
+    {
+        
+        "pictureId": 5,
+        "make": "Autobianchi",
+          "model": "Bianchina",
+          "mileage": 7000,
+          "year": 1961,
+          "price": 40000,
+          "description": "This Autobianchi Bianchina is very rare in Canada, this Trasformabile version with rear engine and rear wheel drive is a excellend vehicle for summer drives around the lake beaches!"
+          
+    },
+    {
+        
+        "pictureId": 6,
+        "make": "Bmw",
+          "model": "Z3",
+          "mileage": 135000,
+          "year": 1996,
+          "price": 21500,
+          "description": "This same model of BMW Z3 was featured on few James Bond movies like Goldeneye and Tomorrow Never Dies, this is a very good looking car with a 1.9L engine and rear wheel drive, very good for summer drives!"
+          
+    },
+    {
+      
+      "pictureId": 7,
+      "make": "MG",
+        "model": "MGB",
+        "mileage": 2120,
+        "year": 1963,
+        "price": 37500,
+        "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
+        
+    },
+    {
+        
+        "pictureId": 8,
+        "make": "MG",
+        "model": "MGB",
+        "mileage": 27500,
+        "year": 1974,
+        "price": 22000,
+        "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
+        
+    },
+    {
+        
+        "pictureId": 9,
+        "make": "Dodge",
+          "model": "Charger",
+          "mileage": 10,
+          "year": 1973,
+          "price": 150000,
+          "description": "The 3rd generation Dodge Charger was considered a Muscle car with huge 7.2L engine and rear wheel drive, this car was very popular in the 70s and 80s and was featured in many movies like Smokey and the Bandit, this car is a very good investment for a collector."
+          
+    },
+    {
+        
+      "pictureId": 10,
+      "make": "MG",
+        "model": "MGB",
+        "mileage": 87000,
+        "year": 1973,
+        "price": 17800,
+        "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
+        
+  }
   ]
