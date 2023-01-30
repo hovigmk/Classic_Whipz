@@ -5,34 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic Whipz!</title>
-  
+  <link rel="icon" type="image/x-icon" href="/images/car.png">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Classic Whipz
-        Where you can buy the car that your dad used to drive!!!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+  <div>
+    <header class="header-bar">
+      <a href="/"><img class="small-logo" src="/images/logo.png"></a>
+      <input class="search-bar" placeholder="Search by model"></input>
+      {{#if logged_in}}
+      <div class="logged-in"><a id="logout" class="login-button no-button">Log out</a>{{user.name}}</div>
+      {{else}}
+      <div class="logged-in"><a href="/login" class="login-button">Login / Register</a></div>
+      {{/if}}
+
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
-      
+      <h2>Contact information</h2>
+      <a>Cezar</a>
+      <a>Esther</a>
+      <a>Hovig</a>
     </footer>
   </div>
 

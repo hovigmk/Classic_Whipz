@@ -9,14 +9,16 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['name', 'email'],//pulled in name and email from user
         },
       ],
     });
 
     // Serialize data so the template can read it
     const cars = carData.map((car) => car.get({ plain: true }));
+console.log(cars);
 
+console.log("HERE LOOK UP");
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       cars, 
@@ -33,13 +35,15 @@ router.get('/car/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ['name'],
         },
       ],
     });
 
     const car = carData.get({ plain: true });
-
+console.log(car);
+console.log(carData);
+console.log("req.params.id CAR INFORMATION HERE ABOVE!!!!!!!!:: " + car.model);
     res.render('car', {
       ...car,
       logged_in: req.session.logged_in
@@ -59,7 +63,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    
     res.render('profile', {
       ...user,
       logged_in: true
@@ -69,10 +73,13 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+
+
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
 
