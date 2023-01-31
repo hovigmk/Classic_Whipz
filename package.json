@@ -1,4 +1,13 @@
 {
+  "name": "gameseller",
+  "version": "1.0.0",
+  "description": "App to sell game",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Stanza987",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
