@@ -1,14 +1,106 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount price}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+<div class="body-for-car-list">
+  <section class="section-car-list-intro">
+    <div class="black-box"></div>
+    <div class="intro-picture"></div>
+    <div class="black-box"></div>
+  </section>
+  <section class="price-item">
+    <h2>💲{{format_amount price}}</h2>
+  </section>
+
+  <section class="section-car-item">
+    <div class="left-container">
+      <!--<div class="buy-now">
+                            <a href="payment.html">Buy now!</a>
+                        </div>-->
+      {{#if logged_in}}
+      <div class="buy">
+        <form action="/charge" method="POST">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ stripePublishableKey }}" data-amount="{{format_deposit_amount price}}"
+            data-name="Deposit for your Model" data-description="Use '4242 4242 4242 4242' for card #"
+            data-image="/img/marketplace.png" data-locale="auto">
+            </script>
+          <script>
+            // Hide default stripe button
+            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+          </script>
+          <button type="submit" class="buy-now">Pay ${{format_deposit price}} Deposit to Buy Now!</button>
+        </form><br>
+      </div>
+      {{else}}
+      <div class="buy">
+        
+          <a href="/login" class="buy-now">Login to Purchase!</a>
+        
+      </div>
+      {{/if}}
+      <div class="car-item">
+        <div class="car-item-info">
+          <h2>Make: {{make}}</h2>
+          <h2>Model: {{model}}</h2>
+          <h2>Year: {{year}}</h2>
+          <h2>Description: {{description}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="right-container">
+      <div class="first-picture">
+        <a href="/images/{{pictureId}}/1.jpg"><img src="/images/{{pictureId}}/1.jpg"></a>
+      </div>
+      <div class="car-item-image-thumbnails">
+        <a href="/images/{{pictureId}}/2.jpg">
+          <div class="other-picture"><img src="/images/{{pictureId}}/2.jpg"></div>
+        </a>
+        <a href="/images/{{pictureId}}/3.jpg">
+          <div class="other-picture"><img src="/images/{{pictureId}}/3.jpg"></div>
+        </a>
+        <a href="/images/{{pictureId}}/4.jpg">
+          <div class="other-picture"><img src="/images/{{pictureId}}/4.jpg"></div>
+        </a>
+        <a href="/images/{{pictureId}}/5.jpg">
+          <div class="other-picture"><img src="/images/{{pictureId}}/5.jpg"></div>
+        </a>
+      </div>
+  </section>
+  <section class="section-comments">
+    {{#if logged_in}}
+    <div class="comment-input">
+      <div class="comment-form"><textarea rows="3" type="text" placeholder="Comment here"></textarea></div>
+      <a href="/login" class="submit-comment">Submit</a>
+    </div>
+    {{else}}
+    <a href="/login" class="submit-comment wide">Login to comment.</a>
+    {{/if}}
+    <div class="comment-box">
+      <h2>Comments</h2>
+      <div class="comment">
+        <div class="comment-user">
+          <h3>Username</h3>
+        </div>
+        <div class="comment-text">
+          <h4>Comment</h4>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">
+          <h3>Username</h3>
+        </div>
+        <div class="comment-text">
+          <h4>Comment</h4>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="comment-user">
+          <h3>Username</h3>
+        </div>
+        <div class="comment-text">
+          <h4>Comment</h4>
+        </div>
+      </div>
+
+  </section>
+
+
+
 </div>
