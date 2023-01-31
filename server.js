@@ -4,8 +4,8 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const uuid = require("./helpers/uuid");
-const helpers = require("./helpers/helpers");
-
+const helpers = require('./helpers/helpers');
+//comments here
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
