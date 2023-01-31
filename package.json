@@ -1,13 +1,14 @@
 {
-  "name": "gameseller",
+  "name": "car-dealer-application",
   "version": "1.0.0",
-  "description": "App to sell game",
-  "main": "app.js",
+  "description": "E-Commers-Application",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
-  "author": "Stanza987",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
@@ -21,22 +22,13 @@
     "sequelize": "^6.28.0",
     "uuid": "^9.0.0"
   },
-  "scripts": {
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
-  },
-  "name": "car-dealer-application",
-  "version": "1.0.0",
-  "description": "E-Commers-Application",
-  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hovigmk/Project_2.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/hovigmk/Project_2/issues"
   },
-  "homepage": "https://github.com/hovigmk/Project_2#readme"
+  "homepage": "https://github.com/hovigmk/Project_2#readme",
+  "devDependencies": {}
 }
