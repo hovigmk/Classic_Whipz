@@ -7,13 +7,16 @@
   <title>Classic Whipz!</title>
   <link rel="icon" type="image/x-icon" href="/images/car.png">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div>
     <header class="header-bar">
-      <a href="/"><img class="small-logo" src="/images/logo.png"></a>
-      <input class="search-bar" placeholder="Search by model"></input>
+      <a href="/"><img class="small-logo" src="/images/logoWithoutText.png"></a>
+      <input type="search" id="search" class="search-bar" placeholder="Search by model">
+      <button  class="btn search-btn"><i class="fa fa-search"></i></button>
+      </input>
       {{#if logged_in}}
       <div class="logged-in"><a id="logout" class="login-button no-button">Log out</a>{{session_username}}</div>
       {{else}}
@@ -21,6 +24,8 @@
       {{/if}}
 
     </header>
+
+
     <main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
@@ -38,5 +43,4 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
-</html>
+<script src="/js/search.js"></script>

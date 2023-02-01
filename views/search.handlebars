@@ -1,0 +1,32 @@
+<div class="body-for-car-list">
+    <section class="section-car-list-intro">
+        <div class="black-box"></div>
+        <div class="intro-picture"></div>
+        <div class="black-box"></div>
+    </section>
+
+    <section class="section-car-list">
+
+        {{#each cars as |car| }}
+        <div class="car-list-item">
+            <div class="car-list-item-image">
+                <a href="/car/{{id}}"><img src="/images/{{id}}/1.jpg" alt="model and year"></a>
+            </div>
+            <div class="car-list-item-info">
+                <h2>{{make}} {{make}} {{model}}</h2>
+                <h3>{{car.mileage}} Kms</h3>
+                <h4>{{description}}</h4>
+                <h2>$ {{format_amount price}}</h2>
+            </div>
+        </div>
+        {{/each}}
+        {{#if car.length}}
+        {{else}}
+        <div class="car-list-item-info">
+            <h2>No cars found!!</h2>
+            {{/if}}
+        </div>
+    </section>
+
+
+</div>

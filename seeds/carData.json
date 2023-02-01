@@ -14,11 +14,11 @@
         
         "pictureId": 2,
         "make": "Mini",
-          "model": "Cooper",
+          "model": "Mini",
           "mileage": 7589,
           "year": 1978,
           "price": 35000,
-          "description": "The Mini is a small front-engined car with 4 seats and a small 2 cylinder 1000cc engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
+          "description": "The Mini is a small front-engined car with 4 seats and a small 4 cylinder engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
           
     },
     {
@@ -29,7 +29,7 @@
           "mileage": 26000,
           "year": 1979,
           "price": 17500,
-          "description": "The Mini is a small front-engined car with 4 seats and a small 2 cylinder 1000cc engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
+          "description": "The Mini is a small front-engined car with 4 seats and a small 4 cylinder engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
           
     },
     {

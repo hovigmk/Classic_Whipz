@@ -75,8 +75,10 @@
     <a href="/login" class="submit-comment wide">Login to comment.</a>
     {{/if}}
     <div class="comment-box">
-      {{#if comments.length}}
       <h2>Comments: {{comments.length}}</h2>
+      
+      {{#if comments.length}}
+      
       {{#each comments as |comment|}}
       <div class="comment">
         <div class="comment-user">
