@@ -21,6 +21,7 @@
     "mysql2": "^3.0.1",
     "path": "^0.12.7",
     "sequelize": "^6.28.0",
+    "stripe": "^5.4.0",
     "uuid": "^9.0.0"
   },
   "repository": {
