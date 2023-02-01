@@ -1,16 +1,22 @@
 const router = require('express').Router();
-const { Car } = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../helpers/auth');
 
 router.post('/', withAuth, async (req, res) => {
+  console.log(req.body);
+  
+  //console.log(req.session.tempid);
   try {
-    const newCar = await Car.create({
+    
+    
+    
+    const newComment = await Comment.create({
       ...req.body,
       userid: req.session.userid,
-      
+      //carid: req.session.tempid,
     });
 
-    res.status(200).json(newCar);
+    res.status(200).json(newComment);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -18,19 +24,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const carData = await Car.destroy({
+    const commentData = await Comment.destroy({
       where: {
         id: req.params.id,
         userid: req.session.userid,
       },
     });
 
-    if (!carData) {
+    if (!commentData) {
       res.status(404).json({ message: 'No car found with this id!' });
       return;
     }
 
-    res.status(200).json(carData);
+    res.status(200).json(commentData);
   } catch (err) {
     res.status(500).json(err);
   }
