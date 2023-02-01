@@ -4,7 +4,8 @@
   "description": "E-Commers-Application",
   "main": "server.js",
   "scripts": {
-    "start": "node seeds/seed.js && node server.js",
+    "start": "node server.js",
+    "build": "node seeds/seed.js && node server.js",
     "seed": "node seeds/seed.js"
   },
   "author": "",
