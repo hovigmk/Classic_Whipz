@@ -1,112 +1,146 @@
 [
-    {
-      
-      "pictureId": 1,
-      "make": "Fiat",
-        "model": "500",
-        "mileage": 29524,
-        "year": 1971,
-        "price": 20000,
-        "description": "The Fiat 500 is a rear-engined car with 4 seats and a small 2 cylinder 500cc engine that makes it very practical for city driving, very easy to maintain as the mechanical parts are of very simple design"
-        
-    },
-    {
-        
-        "pictureId": 2,
-        "make": "Mini",
-          "model": "Mini",
-          "mileage": 7589,
-          "year": 1978,
-          "price": 35000,
-          "description": "The Mini is a small front-engined car with 4 seats and a small 4 cylinder engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
-          
-    },
-    {
-        
-        "pictureId": 3,
-        "make": "Mini",
-          "model": "Mini",
-          "mileage": 26000,
-          "year": 1979,
-          "price": 17500,
-          "description": "The Mini is a small front-engined car with 4 seats and a small 4 cylinder engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
-          
-    },
-    {
-      
-      "pictureId": 4,
-      "make": "Ford",
-        "model": "Thunderbird",
-        "mileage": 101000,
-        "year": 1992,
-        "price": 10888,
-        "description": "This Ford Thunderbird was a luxury sports car sold from 1989 to 1997, front engined and rear wheel drive with muscle v6 supercharged engine can push this classic very fast from start line!"
-        
-    },
-    {
-        
-        "pictureId": 5,
-        "make": "Autobianchi",
-          "model": "Bianchina",
-          "mileage": 7000,
-          "year": 1961,
-          "price": 40000,
-          "description": "This Autobianchi Bianchina is very rare in Canada, this Trasformabile version with rear engine and rear wheel drive is a excellend vehicle for summer drives around the lake beaches!"
-          
-    },
-    {
-        
-        "pictureId": 6,
-        "make": "Bmw",
-          "model": "Z3",
-          "mileage": 135000,
-          "year": 1996,
-          "price": 21500,
-          "description": "This same model of BMW Z3 was featured on few James Bond movies like Goldeneye and Tomorrow Never Dies, this is a very good looking car with a 1.9L engine and rear wheel drive, very good for summer drives!"
-          
-    },
-    {
-      
-      "pictureId": 7,
-      "make": "MG",
-        "model": "MGB",
-        "mileage": 2120,
-        "year": 1963,
-        "price": 37500,
-        "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
-        
-    },
-    {
-        
-        "pictureId": 8,
-        "make": "MG",
-        "model": "MGB",
-        "mileage": 27500,
-        "year": 1974,
-        "price": 22000,
-        "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
-        
-    },
-    {
-        
-        "pictureId": 9,
-        "make": "Dodge",
-          "model": "Charger",
-          "mileage": 10,
-          "year": 1973,
-          "price": 150000,
-          "description": "The 3rd generation Dodge Charger was considered a Muscle car with huge 7.2L engine and rear wheel drive, this car was very popular in the 70s and 80s and was featured in many movies like Smokey and the Bandit, this car is a very good investment for a collector."
-          
-    },
-    {
-        
-      "pictureId": 10,
-      "make": "MG",
-        "model": "MGB",
-        "mileage": 87000,
-        "year": 1973,
-        "price": 17800,
-        "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
-        
+  {
+    "pictureId": 1,
+    "make": "Fiat",
+    "model": "500",
+    "mileage": 29524,
+    "year": 1971,
+    "price": 20000,
+    "description": "The Fiat 500 is a rear-engined car with 4 seats and a small 2 cylinder 500cc engine that makes it very practical for city driving, very easy to maintain as the mechanical parts are of very simple design"
+  },
+  {
+    "pictureId": 2,
+    "make": "Mini",
+    "model": "Mini",
+    "mileage": 7589,
+    "year": 1978,
+    "price": 35000,
+    "description": "The Mini is a small front-engined car with 4 seats and a small 4 cylinder engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
+  },
+  {
+    "pictureId": 3,
+    "make": "Mini",
+    "model": "Mini",
+    "mileage": 26000,
+    "year": 1979,
+    "price": 17500,
+    "description": "The Mini is a small front-engined car with 4 seats and a small 4 cylinder engine that makes it very practical for city driving, very versatile and easy to maintain as the mechanical parts are of very simple design, very loved by all british people as it is considered a 'People's Car'."
+  },
+  {
+    "pictureId": 4,
+    "make": "Ford",
+    "model": "Thunderbird",
+    "mileage": 101000,
+    "year": 1992,
+    "price": 10888,
+    "description": "This Ford Thunderbird was a luxury sports car sold from 1989 to 1997, front engined and rear wheel drive with muscle v6 supercharged engine can push this classic very fast from start line!"
+  },
+  {
+    "pictureId": 5,
+    "make": "Autobianchi",
+    "model": "Bianchina",
+    "mileage": 7000,
+    "year": 1961,
+    "price": 40000,
+    "description": "This Autobianchi Bianchina is very rare in Canada, this Trasformabile version with rear engine and rear wheel drive is a excellend vehicle for summer drives around the lake beaches!"
+  },
+  {
+    "pictureId": 6,
+    "make": "Bmw",
+    "model": "Z3",
+    "mileage": 135000,
+    "year": 1996,
+    "price": 21500,
+    "description": "This same model of BMW Z3 was featured on few James Bond movies like Goldeneye and Tomorrow Never Dies, this is a very good looking car with a 1.9L engine and rear wheel drive, very good for summer drives!"
+  },
+  {
+    "pictureId": 7,
+    "make": "MG",
+    "model": "MGB",
+    "mileage": 2120,
+    "year": 1963,
+    "price": 37500,
+    "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
+  },
+  {
+    "pictureId": 8,
+    "make": "MG",
+    "model": "MGB",
+    "mileage": 27500,
+    "year": 1974,
+    "price": 22000,
+    "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
+  },
+  {
+    "pictureId": 9,
+    "make": "Dodge",
+    "model": "Charger",
+    "mileage": 10,
+    "year": 1973,
+    "price": 150000,
+    "description": "The 3rd generation Dodge Charger was considered a Muscle car with huge 7.2L engine and rear wheel drive, this car was very popular in the 70s and 80s and was featured in many movies like Smokey and the Bandit, this car is a very good investment for a collector."
+  },
+  {
+    "pictureId": 10,
+    "make": "MG",
+    "model": "MGB",
+    "mileage": 87000,
+    "year": 1973,
+    "price": 17800,
+    "description": "This 2 doors british convertible sports car was extremely popular in Europe with a very reliable 1.8 engine derivated from a Tractor engine can go very far and with easy maintenance, very good for a morning coffee run. "
+  },
+  {
+    "pictureId": 11,
+    "make": "BMW",
+    "model": "2002",
+    "mileage": 51250,
+    "year": 1974,
+    "price": 19888,
+    "description": "This BMW was designed by BMW as a entry level car without giving up on luxury optionals like electric windows, leather seats and a healthy and powerful 4 cylinder plant for those days, 2 doors and seats for 4 passengers made this compact sedan very popular in Europe and North America."
+  },
+  {
+    "pictureId": 12,
+    "make": "Chevrolet",
+    "model": "C20",
+    "mileage": 78522,
+    "year": 1971,
+    "price": 32000,
+    "description": "The second-generation C/K series was marketed by both the Chevrolet and GMC divisions. Marketed primarily as pickup trucks, the model line was also offered as chassis cab vehicles without a pickup truck bed; the latter formed the basis of a wide variety of vehicles, ranging from stake trucks, commercial vehicles, and recreational vehicles (RVs)."
+  },
+  {
+    "pictureId": 13,
+    "make": "Ford",
+    "model": "sedan",
+    "mileage": 12000,
+    "year": 1940,
+    "price": 62000,
+    "description": "The 1937-1940 generation of Fords is one of the most popular automobiles for hot rodding. Early stock car racing drivers also used Fords of this generation among other cars. This Ford also formed the basis for a style of dirt track racing car."
+  },
+  {
+    "pictureId": 14,
+    "make": "Ford",
+    "model": "mustang",
+    "mileage": 20,
+    "year": 1966,
+    "price": 75000,
+    "description": "The Mustang was the brainchild of Lee Iacocca. After it burst onto the scene in mid-1964, the Ford Mustang could barely keep it available in nationwide showrooms. In fact, on the first day of sales, almost all the 22,000 cars available were grabbed up. Because of this and the demand for the following year's model, Ford made very few changes to avoid any significant alterations to the design. Even then, with three production sites running full-time, the plants could barely keep up with the demand from the public. By the end of the sales year, 607,578 Mustangs were sold, with the idea that more would have been unloaded if the assembly plants could have produced them."
+  },
+  {
+    "pictureId": 15,
+    "make": "Porsche",
+    "model": "911",
+    "mileage": 96000,
+    "year": 2000,
+    "price": 42500,
+    "description": "The unveiling of the 911 (type 996) in 1997 was a vision of where future Porsche vehicles were heading. Out went the air-cooled engines that had powered all previous iterations, in came a sizeable design overhaul – it’s no surprise that the many were taken aback by the new car’s striking revamp. At the time, it was perhaps the most significant shift in the car looked in the iconic sportscar in its 34-year history."
+  },
+  {
+    "pictureId": 16,
+    "make": "Volkswagen",
+    "model": "Beetle",
+    "mileage": 54666,
+    "year": 1966,
+    "price": 15000,
+    "description": "Considered among Germans as People's Car this compact car sold millions all over the world, In the back of the Bug is a small 1.2L 1,300cc I4 motor with a whopping 50bhp and 65lb ft of torque all through a 4 speed gearbox, special for the '66 models."
   }
-  ]
+]
