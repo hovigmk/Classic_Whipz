@@ -16,7 +16,7 @@ const seedDatabase = async () => {
   for (const car of carData) {
     await Car.create({
       ...car,
-      userid: users[Math.floor(Math.random() * users.length)].id,
+      //userid: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
@@ -28,7 +28,7 @@ const seedDatabase = async () => {
   for (const comment of commentData) {
     await Comment.create({
       ...comment,
-      userid: users[Math.floor(Math.random() * users.length)].id,
+      //userid: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 

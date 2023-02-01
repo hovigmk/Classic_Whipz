@@ -30,13 +30,17 @@ Comment.init(
       },
     },
 
-    /*userid: {
+    user_name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    userid: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
       },
-    },*/
+    },
 
   },
   {

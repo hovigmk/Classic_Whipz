@@ -15,7 +15,7 @@
       <a href="/"><img class="small-logo" src="/images/logo.png"></a>
       <input class="search-bar" placeholder="Search by model"></input>
       {{#if logged_in}}
-      <div class="logged-in"><a id="logout" class="login-button no-button">Log out</a>{{name}}</div>
+      <div class="logged-in"><a id="logout" class="login-button no-button">Log out</a>{{session_username}}</div>
       {{else}}
       <div class="logged-in"><a href="/login" class="login-button">Login / Register</a></div>
       {{/if}}
