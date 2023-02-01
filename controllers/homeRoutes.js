@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('homepage', {
       cars,
+      session_username: req.session.username,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -38,7 +39,7 @@ router.get('/car/:id', async (req, res) => {
       include: [
         {
           model: Comment,
-          attributes: ['id', 'message', 'date_created', 'carid', 'userid'],
+          attributes: ['id', 'message', 'date_created', 'carid', 'userid', 'user_name'],
         },
         
       ],
@@ -74,7 +75,8 @@ console.log(car);
     res.render('car', {
       //...comment,
       ...car,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      session_username: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
