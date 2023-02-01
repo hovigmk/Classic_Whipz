@@ -4,7 +4,7 @@
   "description": "E-Commers-Application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node seeds/seed.js && node server.js",
     "seed": "node seeds/seed.js"
   },
   "author": "",
@@ -29,6 +29,5 @@
   "bugs": {
     "url": "https://github.com/hovigmk/Project_2/issues"
   },
-  "homepage": "https://github.com/hovigmk/Project_2#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/hovigmk/Project_2#readme"
 }
