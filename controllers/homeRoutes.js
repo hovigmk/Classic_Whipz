@@ -41,39 +41,18 @@ router.get('/car/:id', async (req, res) => {
           model: Comment,
           attributes: ['id', 'message', 'date_created', 'carid', 'userid', 'user_name'],
         },
-        
+
       ],
-      
+
     });
 
     const car = carData.get({ plain: true });
-console.log(car);
-    //get user info
-/*
-    const commentData = await Comment.findByPk(req.params.id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Comment }],
-    });
+    console.log(car);
 
-    const comment = commentData.get({ plain: true });*/
-    
-    //console.log(car.comments);
     carid = car.id;
-    //console.log(carid);
-    ////
-    //console.log(car);
-    //// 
-    /*
 
-    req.session.save(() => {
-      req.session.tempid = carid;
-
-    });*/
-
-    ////
     console.log(" HERE ABOVE!!!!!!!!:: " + car.model);
     res.render('car', {
-      //...comment,
       ...car,
       logged_in: req.session.logged_in,
       session_username: req.session.username,
@@ -93,7 +72,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-console.log(user);
+    console.log(user);
     res.render('profile', {
       ...user,
       logged_in: true
@@ -136,6 +115,79 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+// get carlist
+router.get('/carlist', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const carData = await Car.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],//pulled in name  from user
+        },
+      ],
+    });
+    // Serialize data so the template can read it
+    const cars = carData.map((car) => car.get({ plain: true }));
+    console.log(cars);
+    // Pass serialized data and session flag into template
+    res.render('carlist', {
+      cars,
+      //session_username: req.session.username,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+//
+
+router.get('/search/:search', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+
+    console.log("router.get/search from homeRoutes.js");
+    //console.log(carData);
+    console.log(req.params.search);
+    //const carData = await Car.findOne({ where: { id: req.params.search } });
+    //console.log(carData.dataValues);
+    console.log(req.params.search);
+    console.log("Hello homeRoutes worked!!");
+    //console.log(carData.model);
+///////
+console.log(req.params.search);
+const carData = await Car.findAll({
+  where: { model: req.params.search},
+  include: [
+    {
+      model: User,
+      attributes: ['name'],//pulled in name  from user
+    },
+  ],
+});
+
+// Serialize data so the template can read it
+const cars = carData.map((car) => car.get({ plain: true }));
+
+console.log(carData);
+
+///////
+    // Serialize data so the template can read it
+    //const cars = carData.map((car) => car.get({ plain: true }));
+    //const car = carData.get({ plain: true });
+    console.log("cars below!!!!");
+    console.log(cars);
+  
+    // Pass serialized data and session flag into template
+    res.render('search', {
+      cars,
+      logged_in: req.session.logged_in,
+      //session_username: req.session.username,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
