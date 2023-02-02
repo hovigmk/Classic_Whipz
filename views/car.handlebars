@@ -21,12 +21,16 @@
             data-name="Deposit for your Model" data-description="Use '4242 4242 4242 4242' for card #"
             data-image="/img/marketplace.png" data-locale="auto">
             </script>
+            
           <script>
             // Hide default stripe button
             document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
           </script>
-          <button type="submit" class="buy-now">Pay ${{format_deposit price}} Deposit to Buy Now!</button>
+          
+          <button action="/charge" method="POST" data-id={{id}} onclick="delButtonHandler();" type="submit" id="deletethis" class="buy-now deletethis">Pay ${{format_deposit price}} Deposit to Buy Now!</button>
         </form><br>
+        <!-- test button -->
+       
       </div>
       {{else}}
       <div class="buy">
@@ -96,5 +100,5 @@
   </section>
 
 </div>
-
+<script src="/js/profile.js"></script>
 <script src="/js/comment.js"></script>

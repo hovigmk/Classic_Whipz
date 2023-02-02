@@ -56,6 +56,7 @@ router.get('/car/:id', async (req, res) => {
       ...car,
       logged_in: req.session.logged_in,
       session_username: req.session.username,
+     
     });
   } catch (err) {
     res.status(500).json(err);
