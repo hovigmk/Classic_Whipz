@@ -20,10 +20,10 @@ data-id={{id}} onclick="delButtonHandler(event)" id="deletethis"
                         </div>-->
       {{#if logged_in}}
       <div class="buy">
-        <form   action="/profile" method="GET" >
+        <form   data-id={{id}} onclick="delButtonHandler(event)" action="/charge/{{id}}/{{price}}/{{id}}{{model}}" method="POST" >
         
           <script  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_51MTxWlJ6ot15kLDDB1g7WVmdu2Jgqw7IjV6LFj8qroeyDBmxwJARSQccbVbcaxTB6rTWpGmj5guZ4xVPf7Zw4bZ700Z9BeQDuu"  data-amount="{{format_deposit_amount price}}"
+            data-key="pk_test_51MWsBqFedoDMRamPBsp4YRZEOTRVhMECzdszYpVVduHdCkuoBnZSyk6G7UpjWFIk0VVfIcVUwPhX2SbGhtWpQjSE00UplXsjGu"  data-amount="{{format_deposit_amount price}}"
             data-name="Deposit for your Model" data-description="Use '4242 4242 4242 4242' for card #"
             data-image="/img/marketplace.png" data-locale="auto">
             </script>
@@ -33,7 +33,7 @@ data-id={{id}} onclick="delButtonHandler(event)" id="deletethis"
             document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
           </script>
           
-          <button data-id={{id}} onclick="delButtonHandler();" type="submit" id="deletethis" class="buy-now deletethis">Pay ${{format_deposit price}} Deposit to Buy Now!</button>
+          <button  type="submit" id="deletethis" class="buy-now deletethis">Pay ${{format_deposit price}} Deposit to Buy Now!</button>
         </form><br>
         <!-- test button -->
        

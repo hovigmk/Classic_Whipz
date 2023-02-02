@@ -1,7 +1,12 @@
 const router = require('express').Router();
 const { Car, User, Comment } = require('../models');
 const withAuth = require('../helpers/auth');
-var carid = 1;
+const keys = require('../config/keys');
+const stripe = require('stripe')(keys.stripeSecretKey);
+const bodyParser = require('body-parser');
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
+
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -189,6 +194,35 @@ console.log(carData);
   } catch (err) {
     res.status(500).json(err);
   }
+});
+/// Charge
+router.post('/charge/:id/:price/:description', (req, res) => {
+ 
+  
+  const amount = req.params.price * 10;
+const description = req.params.description;
+
+  console.log(req.params.id);
+  console.log(amount);
+  console.log("params id above");
+  console.log(req.body);
+  
+  stripe.customers.create({
+    email: req.body.stripeEmail,
+    source: req.body.stripeToken
+   
+  })
+  .then(customer => stripe.charges.create({
+    amount,
+    description,
+    currency: 'CAD',
+    customer: customer.id 
+  }))
+  
+  .then(charge => console.log(req.body.amount))
+  .then(charge => res.render('success'));
+  
+
 });
 
 module.exports = router;
