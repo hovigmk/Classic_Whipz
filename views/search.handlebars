@@ -1,12 +1,10 @@
 <div class="body-for-car-list">
-    <section class="section-car-list-intro">
-        <div class="black-box"></div>
-        <div class="intro-picture"></div>
-        <div class="black-box"></div>
-    </section>
+    <div class="divider">
+        <img src="/images/logo2.png" alt="hero image" class="hero-image">
+    </div>
 
     <section class="section-car-list">
-
+{{#if cars.length}}
         {{#each cars as |car| }}
         <div class="car-list-item">
             <div class="car-list-item-image">
@@ -20,13 +18,12 @@
             </div>
         </div>
         {{/each}}
-        {{#if car.length}}
+        
         {{else}}
         <div class="car-list-item-info">
             <h2>No cars found!!</h2>
             {{/if}}
         </div>
     </section>
-
 
 </div>

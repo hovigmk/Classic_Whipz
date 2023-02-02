@@ -1,59 +1,7 @@
 <div class="body-for-car-list">
-  <section class="section-car-list-intro">
-    <div class="black-box"></div>
-    <div class="intro-picture"></div>
-    <div class="black-box"></div>
-  </section>
-  <section class="price-item">
-    <h2>💲{{format_amount price}}</h2>
-  </section>
 
   <section class="section-car-item">
-    <div class="left-container">
-      <!--<div class="buy-now">
 
-data-id={{id}} onclick="delButtonHandler(event)" id="deletethis"
-
-
-
-                            <a href="payment.html">Buy now!</a>
-                        </div>-->
-      {{#if logged_in}}
-      <div class="buy">
-        <form   data-id={{id}} onclick="delButtonHandler(event)" action="/charge/{{id}}/{{price}}/{{id}}{{model}}" method="POST" >
-        
-          <script  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_51MWsBqFedoDMRamPBsp4YRZEOTRVhMECzdszYpVVduHdCkuoBnZSyk6G7UpjWFIk0VVfIcVUwPhX2SbGhtWpQjSE00UplXsjGu"  data-amount="{{format_deposit_amount price}}"
-            data-name="Deposit for your Model" data-description="Use '4242 4242 4242 4242' for card #"
-            data-image="/img/marketplace.png" data-locale="auto">
-            </script>
-            
-          <script>
-            // Hide default stripe button
-            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
-          </script>
-          
-          <button  type="submit" id="deletethis" class="buy-now deletethis">Pay ${{format_deposit price}} Deposit to Buy Now!</button>
-        </form><br>
-        <!-- test button -->
-       
-      </div>
-      {{else}}
-      <div class="buy">
-
-        <a href="/login" class="buy-now">Login to Purchase!</a>
-
-      </div>
-      {{/if}}
-      <div class="car-item">
-        <div class="car-item-info">
-          <h2>Make: {{make}}</h2>
-          <h2>Model: {{model}}</h2>
-          <h2>Year: {{year}}</h2>
-          <h2>Description: {{description}}</h2>
-        </div>
-      </div>
-    </div>
     <div class="right-container">
       <div class="first-picture">
         <a href="/images/{{pictureId}}/1.jpg"><img src="/images/{{pictureId}}/1.jpg"></a>
@@ -72,23 +20,72 @@ data-id={{id}} onclick="delButtonHandler(event)" id="deletethis"
           <div class="other-picture"><img src="/images/{{pictureId}}/5.jpg"></div>
         </a>
       </div>
-  </section>
-  <section class="section-comments">
-    {{#if logged_in}}
-    <div class="comment-input">
-      <form class="comment-form" data-carId={{id}} data-user_name="{{req.session.userName}}"><textarea id="comment-box" rows="3" type="text"
-          placeholder="Comment here"></textarea>
-        <button type="submit" id="submit-comment" class="submit-comment">Submit</button>
-      </form>
     </div>
-    {{else}}
-    <a href="/login" class="submit-comment wide">Login to comment.</a>
-    {{/if}}
+
+    <div class="left-container">
+      <div class="car-item">
+        <div class="car-item-info">
+          <h2>Make: {{make}}</h2>
+          <h2>Model: {{model}}</h2>
+          <h2>Year: {{year}}</h2>
+          <h2>Price: ${{format_amount price}}</h2>
+          <p>Description: {{description}}</p>
+        </div>
+      </div>
+      {{#if logged_in}}
+      <div class="buy">
+        <form data-id={{id}} onclick="delButtonHandler(event)" action="/charge/{{id}}/{{price}}/{{id}}{{model}}"
+          method="POST">
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_51MWsBqFedoDMRamPBsp4YRZEOTRVhMECzdszYpVVduHdCkuoBnZSyk6G7UpjWFIk0VVfIcVUwPhX2SbGhtWpQjSE00UplXsjGu"
+            data-amount="{{format_deposit_amount price}}" data-name="Deposit for your Model"
+            data-description="Use '4242 4242 4242 4242' for card #" data-image="/images/icon.png" data-locale="auto">
+            </script>
+
+          <script>
+            // Hide default stripe button
+            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+          </script>
+
+          <button type="submit" id="deletethis" class="buy-now deletethis">Pay ${{format_deposit price}} Deposit to Buy
+            Now!</button>
+        </form><br>
+        <!-- test button -->
+
+      </div>
+      {{else}}
+      <div class="buy">
+
+        <a href="/login" class="buy-now">Login to Purchase!</a>
+
+      </div>
+      {{/if}}
+    </div>
+
+  </section>
+
+  <section class="section-comments">
+    <div class="commentbtn">
+      {{#if logged_in}}
+      <div class="comment-input">
+        <form class="comment-form form-inline" data-carId={{id}} data-user_name="{{req.session.userName}}">
+          <textarea id="comment-box" placeholder="Comment here" rows="3" type="text">
+          </textarea>
+          <button type="submit" id="submit-comment" class="submit-comment">Submit</button>
+        </form>
+
+        {{else}}
+        <a href="/login" class="login-comment wide">Login to comment</a>
+        {{/if}}
+      </div>
+    </div>
+
     <div class="comment-box">
       <h2>Comments: {{comments.length}}</h2>
-      
+
       {{#if comments.length}}
-      
+
       {{#each comments as |comment|}}
       <div class="comment">
         <div class="comment-user">

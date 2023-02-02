@@ -198,7 +198,7 @@ console.log(carData);
 /// Charge
 router.post('/charge/:id/:price/:description', (req, res) => {
  
-  
+  const carid = req.params.id;
   const amount = req.params.price * 10;
 const description = req.params.description;
 
@@ -218,8 +218,14 @@ const description = req.params.description;
     currency: 'CAD',
     customer: customer.id 
   }))
-  
-  .then(charge => console.log(req.body.amount))
+  .then(charge => test = amount / 100, console.log(amount))
+  .then(charge => console.log(amount + "amount above" + carid + "carid above" + description + "description above"))
+  //.then(charge => Car.update({ sold: true }, { where: { id: carid } }))
+
+/*.then(charge => fetch(`/api/cars/${carid}`, {
+    method: 'DELETE',
+}))*/
+
   .then(charge => res.render('success'));
   
 

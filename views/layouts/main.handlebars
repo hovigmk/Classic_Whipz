@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic Whipz!</title>
-  <link rel="icon" type="image/x-icon" href="/images/car.png">
+  <link rel="icon" type="icon" href="/images/logoWithoutText.png">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div>
-    <header class="header-bar">
+    <nav class="header-bar">
       <a href="/"><img class="small-logo" src="/images/logoWithoutText.png"></a>
       <input type="search" id="search" class="search-bar" placeholder="Search by model">
       <button  class="btn search-btn"><i class="fa fa-search"></i></button>
@@ -22,19 +21,20 @@
       {{else}}
       <div class="logged-in"><a href="/login" class="login-button">Login / Register</a></div>
       {{/if}}
-
-    </header>
-
+    </nav>
 
     <main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
+
+    <footer class="footer">
       <h2>Contact information</h2>
-      <a>Cezar</a>
-      <a>Esther</a>
-      <a>Hovig</a>
+      <div class="footerLinks">
+        <a href="https://github.com/cdennis27" class="links">Cezar</a>
+        <a href="https://github.com/hovigk" class="links">Hovig</a>
+        <a href="https://github.com/yerimechoi" class="links">Esther</a>
+      </div>
     </footer>
   </div>
 
@@ -43,4 +43,5 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+
 <script src="/js/search.js"></script>
