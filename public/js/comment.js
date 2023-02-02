@@ -1,7 +1,7 @@
 
 const addComment = async (event) => {
     event.preventDefault();
-
+debugger;
 console.log(event.target.dataset);
     const carid = event.target.dataset.carid;
     const user_name = event.target.dataset.user_name;

@@ -7,7 +7,7 @@ router.post('/', withAuth, async (req, res) => {
     const newCar = await Car.create({
       ...req.body,
       userid: req.session.userid,
-      
+
     });
 
     res.status(200).json(newCar);
@@ -18,10 +18,11 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
+    
+    console.log("Delete!!!!!!!!!!!!!!!!!!!");
     const carData = await Car.destroy({
       where: {
         id: req.params.id,
-        userid: req.session.userid,
       },
     });
 

@@ -28,6 +28,7 @@ const newFormHandler = async (event) => {
   };
   
   const delButtonHandler = async (event) => {
+    debugger;
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
@@ -36,7 +37,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
       } else {
         alert('Failed to delete car');
       }
@@ -48,6 +49,6 @@ const newFormHandler = async (event) => {
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.car-list')
+    .getElementById('#deletethis')
     .addEventListener('click', delButtonHandler);
   
