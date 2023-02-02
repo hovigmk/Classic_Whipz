@@ -1,24 +1,22 @@
-<!-- Loop over each object in the cars array -->
-{{#each cars as |car| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets if required -->
-      
-      <a href="/car/{{car.id}}">{{car.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass price value to the helper function -->
-      <span class="dollar-amount">{{format_amount car.price}}</span>
-      Buy NOW!
-    </p>
-    <p>Posted by {{car.user.name}} For sale:{{car.year}}, {{car.make}}, {{car.model}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{car.description}}
-    </p>
-  </div>
+<div class="body-for-homepage">
+  <section class="section-homepage">
+    <div class="red-box">
+      <h1>Classic Whipz<br><span>Where you can buy the car that your dad used to drive!</span></h1>
+    </div>
+    <div class="intro-picture"></div>
+  </section>
+  <section class="section-new-additions">
+    <h2>Newest additions for sale!!!</h2>
+    <div class="container-new-additions">
+      {{#each cars as |car| }}
+
+      <div class="new-addition">
+        <a href="/car/{{car.id}}"><img src="/images/{{car.id}}/1.jpg" alt="model and year"></a>
+        <a href="/car/{{car.id}}">{{car.year}} {{car.make}} {{car.model}}</a>
+      </div>
+
+      {{/each}}
+    </div>
+    <a href="/carlist" class="see-all">See more</a>
+  </section>
 </div>
-{{/each}}

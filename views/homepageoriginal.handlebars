@@ -1,0 +1,24 @@
+<!-- Loop over each object in the cars array -->
+{{#each cars as |car| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets if required -->
+      
+      <a href="/car/{{car.id}}">{{car.name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass price value to the helper function -->
+      <span class="dollar-amount">{{format_amount car.price}}</span>
+      Buy NOW!
+    </p>
+    <p>Posted by {{car.user.name}} For sale:{{car.year}}, {{car.make}}, {{car.model}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{car.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
