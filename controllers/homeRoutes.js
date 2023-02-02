@@ -9,25 +9,18 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+
     const carData = await Car.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],//pulled in name  from user
+          attributes: ['name'],
         },
       ],
     });
 
-    // Serialize data so the template can read it
     const cars = carData.map((car) => car.get({ plain: true }));
 
-    console.log(cars);
-
-
-
-    console.log("HERE LOOK UP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    // Pass serialized data and session flag into template
     res.render('homepage', {
       cars,
       session_username: req.session.username,
@@ -52,33 +45,28 @@ router.get('/car/:id', async (req, res) => {
     });
 
     const car = carData.get({ plain: true });
-    console.log(car);
-
     carid = car.id;
-
-    console.log(" HERE ABOVE!!!!!!!!:: " + car.model);
     res.render('car', {
       ...car,
       logged_in: req.session.logged_in,
       session_username: req.session.username,
-     
+
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+
     const userData = await User.findByPk(req.session.userid, {
       attributes: { exclude: ['password'] },
       include: [{ model: Car }],
     });
 
     const user = userData.get({ plain: true });
-    console.log(user);
+
     res.render('profile', {
       ...user,
       logged_in: true
@@ -103,7 +91,7 @@ router.get('/comment/:id', async (req, res) => {
 
     const comment = commentData.get({ plain: true });
 
-    console.log(id);
+
     res.render('comment', {
       ...comment,
       logged_in: req.session.logged_in
@@ -114,7 +102,7 @@ router.get('/comment/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -122,70 +110,47 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-// get carlist
+// get carlist information and render page
 router.get('/carlist', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+
     const carData = await Car.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],//pulled in name  from user
+          attributes: ['name'],
         },
       ],
     });
-    // Serialize data so the template can read it
+
     const cars = carData.map((car) => car.get({ plain: true }));
-    console.log(cars);
-    // Pass serialized data and session flag into template
+
     res.render('carlist', {
       cars,
-      //session_username: req.session.username,
+      //session_username: req.session.username, might need later
       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-//
 
+// get search information and render search page under development will change to have a broader search
 router.get('/search/:search', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
 
-    console.log("router.get/search from homeRoutes.js");
-    //console.log(carData);
-    console.log(req.params.search);
-    //const carData = await Car.findOne({ where: { id: req.params.search } });
-    //console.log(carData.dataValues);
-    console.log(req.params.search);
-    console.log("Hello homeRoutes worked!!");
-    //console.log(carData.model);
-///////
-console.log(req.params.search);
-const carData = await Car.findAll({
-  where: { model: req.params.search},
-  include: [
-    {
-      model: User,
-      attributes: ['name'],//pulled in name  from user
-    },
-  ],
-});
+    const carData = await Car.findAll({
+      where: { model: req.params.search },
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-// Serialize data so the template can read it
-const cars = carData.map((car) => car.get({ plain: true }));
+    const cars = carData.map((car) => car.get({ plain: true }));
 
-console.log(carData);
-
-///////
-    // Serialize data so the template can read it
-    //const cars = carData.map((car) => car.get({ plain: true }));
-    //const car = carData.get({ plain: true });
-    console.log("cars below!!!!");
-    console.log(cars);
-  
-    // Pass serialized data and session flag into template
     res.render('search', {
       cars,
       logged_in: req.session.logged_in,
@@ -195,39 +160,33 @@ console.log(carData);
     res.status(500).json(err);
   }
 });
-/// Charge
+/// Charge and stripe route under development delete or update database will be inserted 
 router.post('/charge/:id/:price/:description', (req, res) => {
- 
+
   const carid = req.params.id;
   const amount = req.params.price * 10;
-const description = req.params.description;
+  const description = req.params.description;
 
-  console.log(req.params.id);
-  console.log(amount);
-  console.log("params id above");
-  console.log(req.body);
-  
   stripe.customers.create({
     email: req.body.stripeEmail,
     source: req.body.stripeToken
-   
+
   })
-  .then(customer => stripe.charges.create({
-    amount,
-    description,
-    currency: 'CAD',
-    customer: customer.id 
-  }))
+    .then(customer => stripe.charges.create({
+      amount,
+      description,
+      currency: 'CAD',
+      customer: customer.id
+    }))/*
   .then(charge => test = amount / 100, console.log(amount))
   .then(charge => console.log(amount + "amount above" + carid + "carid above" + description + "description above"))
   //.then(charge => Car.update({ sold: true }, { where: { id: carid } }))
 
-/*.then(charge => fetch(`/api/cars/${carid}`, {
+.then(charge => fetch(`/api/cars/${carid}`, {
     method: 'DELETE',
 }))*/
 
-  .then(charge => res.render('success'));
-  
+    .then(charge => res.render('success'));
 
 });
 

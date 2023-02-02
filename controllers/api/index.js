@@ -4,7 +4,7 @@ const carRoutes = require('./carRoutes');
 const commentRoutes = require('./commentRoutes');
 const searchRoutes = require('./searchRoutes');
 
-
+//api routes
 router.use('/users', userRoutes);
 router.use('/cars', carRoutes);
 router.use('/comments', commentRoutes);

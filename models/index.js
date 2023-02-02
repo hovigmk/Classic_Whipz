@@ -1,7 +1,7 @@
 const User = require('./User');
 const Car = require('./Car');
 const Comment = require('./Comment');
-//const Payment = require('./Payment');
+
 
 User.hasMany(Car, {
   foreignKey: 'userid',

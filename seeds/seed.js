@@ -20,15 +20,10 @@ const seedDatabase = async () => {
     });
   }
 
-  /*const cars = await Car.bulkCreate(carData, {
-    individualHooks: true,
-    returning: true,
-  });*/
-
   for (const comment of commentData) {
     await Comment.create({
       ...comment,
-      //userid: users[Math.floor(Math.random() * users.length)].id,
+
     });
   }
 

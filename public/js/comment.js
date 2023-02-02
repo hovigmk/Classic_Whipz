@@ -29,7 +29,6 @@ console.log(event.target.dataset);
     }
 };
 
-
 document
     .querySelector('.comment-form')
     .addEventListener('submit', addComment);

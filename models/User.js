@@ -29,15 +29,14 @@ User.init(
       allowNull: false,
       validate: {
         isEmail: true,
-      }, 
+      },
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      //validate: {
-      //    len: [8, 20],
-      //    is: ["^[a-z]+$",'i'],
-      //},Esther
+      validate: {
+        len: [8, 20],
+      },
     },
 
   },

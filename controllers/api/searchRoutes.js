@@ -4,17 +4,12 @@ const { Car, User } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body.search);
-
+        
         const carData = await Car.findAll({
             where: { model: req.body.search }
 
         });
-        //console.log(carData.dataValues);
-        console.log(carData);
-        console.log("Hello searchRoutes worked!!");
-        console.log(carData.model);
-
+        
         if (!carData) {
             res
                 .status(400)

@@ -6,13 +6,13 @@ const routes = require("./controllers");
 const uuid = require("./helpers/uuid");
 const helpers = require('./helpers/helpers');
 const app = express();
-//stripe
+// stripe
 const keys = require('./config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-//database and session storage
+// database and session storage
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -22,28 +22,27 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-    secret: 'Super secret secret',
-    cookie: {
-      maxAge: 300000,
-      httpOnly: true,
-      secure: false,
-      sameSite: 'strict',
-    },
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize
-    })
-  };
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
 
-  app.use(session(sess));
+app.use(session(sess));
 
-  // template engine handling through express-handlebars
+// template engine handling through express-handlebars
 
 app.set('view engine', 'handlebars');
 app.engine('handlebars', hbs.engine);
 
-// express middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
