@@ -14,6 +14,7 @@ router.post('/', withAuth, async (req, res) => {
       ...req.body,
       userid: req.session.userid,
       //carid: req.session.tempid,
+      user_name: req.session.username,
     });
 
     res.status(200).json(newComment);

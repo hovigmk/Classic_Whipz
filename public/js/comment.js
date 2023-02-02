@@ -4,6 +4,7 @@ const addComment = async (event) => {
 
 console.log(event.target.dataset);
     const carid = event.target.dataset.carid;
+    const user_name = event.target.dataset.user_name;
     const message = document.querySelector('#comment-box').value.trim();
     console.log(message);
     
@@ -21,7 +22,7 @@ console.log(event.target.dataset);
 
         if (response.ok) {
             
-            document.location.replace('/profile');
+            document.location.replace(`/car/${carid}`);
         } else {
             alert(response.statusText);
         }

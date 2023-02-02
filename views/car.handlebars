@@ -30,9 +30,9 @@
       </div>
       {{else}}
       <div class="buy">
-        
-          <a href="/login" class="buy-now">Login to Purchase!</a>
-        
+
+        <a href="/login" class="buy-now">Login to Purchase!</a>
+
       </div>
       {{/if}}
       <div class="car-item">
@@ -66,54 +66,34 @@
   <section class="section-comments">
     {{#if logged_in}}
     <div class="comment-input">
-      <form class="comment-form" data-carId={{id}}><textarea id="comment-box" rows="3" type="text" placeholder="Comment here"></textarea>
-      <button type="submit"  id="submit-comment" class="submit-comment">Submit</button>
-    </form>
+      <form class="comment-form" data-carId={{id}} data-user_name="{{req.session.userName}}"><textarea id="comment-box" rows="3" type="text"
+          placeholder="Comment here"></textarea>
+        <button type="submit" id="submit-comment" class="submit-comment">Submit</button>
+      </form>
     </div>
     {{else}}
     <a href="/login" class="submit-comment wide">Login to comment.</a>
     {{/if}}
     <div class="comment-box">
-      <h2>Comments: {{message}}</h2>
+      <h2>Comments: {{comments.length}}</h2>
+      
       {{#if comments.length}}
-  <div class="col-md-6 car-list">
-    <h3>Current Cars for Sale:</h3>
-
-    {{#each comments as |comment|}}
-    
-        <h4><a href="/car/{{comment.userid}}">{{comment.message}}{{comment.date_created}}</a></h4>
-     
-    {{/each}}
-  </div>
-  {{/if}}
+      
+      {{#each comments as |comment|}}
       <div class="comment">
         <div class="comment-user">
-          <h3>Username</h3>
+          <h3>{{comment.user_name}}</h3>
+          <h4>{{format_date comment.date_created}}</h4>
         </div>
         <div class="comment-text">
-          <h4>Comment</h4>
+          <h4>{{comment.message}}</h4>
         </div>
       </div>
-      <div class="comment">
-        <div class="comment-user">
-          <h3>Username</h3>
-        </div>
-        <div class="comment-text">
-          <h4>Comment</h4>
-        </div>
-      </div>
-      <div class="comment">
-        <div class="comment-user">
-          <h3>Username</h3>
-        </div>
-        <div class="comment-text">
-          <h4>Comment</h4>
-        </div>
-      </div>
+      {{/each}}
+      {{/if}}
+    </div>
 
   </section>
-
-
 
 </div>
 
