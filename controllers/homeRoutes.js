@@ -183,20 +183,27 @@ router.post('/charge/:id/:price/:description', (req, res) => {
   //.then(charge => Car.update({ sold: true }, { where: { id: carid } }))
 */
 
-    .then(async charge => {
-      const carData = await Car.destroy({
-        where: {
-          id: req.params.id,
-        },
-      });
-      if (!carData) {
-        res.status(404).json({ message: 'No car found with this id!' });
-        return;
-      }
-      res.render('success');
-    })
+.then( async charge => {
+  const carData = await Car.destroy({
+    where: {
+      id: req.params.id,
+    },
+  });
+  if (!carData) {
+    res.status(404).json({ message: 'No car found with this id!' });
+    return;
+  }
 
-  // .then(charge => res.render('success'));
+  res.render('success');
+
+})
+
+/*
+.then(charge => fetch(`/api/cars/${carid}`, {
+    method: 'DELETE',
+}))*/
+
+   // .then(charge => res.render('success'));
 
 });
 

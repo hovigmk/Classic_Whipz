@@ -784,9 +784,11 @@ footer {
     .logo {
         display: flex;
         position: absolute;
-        top: 25%;
+        top: 10%;
         left: 4%;
         text-align: center;
+        width: 60vw;
+        height: auto;
     }
 
     .section-new-additions {
