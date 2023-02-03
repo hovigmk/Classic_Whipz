@@ -181,12 +181,22 @@ router.post('/charge/:id/:price/:description', (req, res) => {
   .then(charge => test = amount / 100, console.log(amount))
   .then(charge => console.log(amount + "amount above" + carid + "carid above" + description + "description above"))
   //.then(charge => Car.update({ sold: true }, { where: { id: carid } }))
+*/
 
-.then(charge => fetch(`/api/cars/${carid}`, {
-    method: 'DELETE',
-}))*/
+    .then(async charge => {
+      const carData = await Car.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      if (!carData) {
+        res.status(404).json({ message: 'No car found with this id!' });
+        return;
+      }
+      res.render('success');
+    })
 
-    .then(charge => res.render('success'));
+  // .then(charge => res.render('success'));
 
 });
 
