@@ -184,7 +184,7 @@ body {
 .logo {
     display: flex;
     position: absolute;
-    top: 35%;
+    top: 400px;
     left: 4%;
     text-align: center;
 }
@@ -733,7 +733,8 @@ footer {
 
     /*main homepage portion*/
     .logo {
-        top: 75%;
+        top: 340px;
+        width: 90vw;
     }
 
     /*newest addition section*/
@@ -880,7 +881,7 @@ footer {
         margin-right: 0;
     }
 
-    
+
     .small-logo {
         height: 3rem;
         display: inline-block;
@@ -906,7 +907,7 @@ footer {
         transition-duration: 0.1s;
         cursor: text;
     }
-    
+
     .btn {
         width: 1rem;
         height: 1rem;
@@ -937,7 +938,7 @@ footer {
     .intro-picture img {
         height: auto;
         width: 100%;
-        
+
     }
 
     .left {
@@ -948,7 +949,7 @@ footer {
     .logo {
         display: flex;
         position: absolute;
-        top: 40%;
+        top: 250px;
         left: 4%;
         text-align: center;
         width: 60vw;
@@ -1082,7 +1083,7 @@ footer {
         width: 30vw;
         height: 2rem;
     }
-   
+
     .comment-box h2 {
         padding: 0 0 1rem 0;
     }
@@ -1092,7 +1093,7 @@ footer {
         font-weight: 500;
         width: 50vw;
     }
-        
+
     .comment {
         justify-content: center;
         align-items: left;
@@ -1128,5 +1129,15 @@ footer {
     }
 
     /*success*/
+
+}
+
+@media only screen and (max-width: 300px) {
+
+    /*main homepage portion*/
+    .logo {
+        top: 280px;
+        width: 90vw;
+    }
 
 }
