@@ -4,8 +4,7 @@ const searchFormHandler = async (e) => {
     e.preventDefault();
   
     search = document.querySelector('#search').value.trim();
-    
-    debugger;
+   
     if (search) {
       
       const response = await fetch(`/api/search`, {
